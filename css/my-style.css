@@ -1,0 +1,17 @@
+div.container-fluid.mycv {
+  width: 80%;
+}
+.title {
+  text-align: center;
+}
+.form-label {
+  padding-right: 10px;
+}
+.email-input {
+  padding-left: 15px;
+  border-radius: 4px;
+}
+.message-input {
+  border-radius: 4px;
+  width: 100%;
+}

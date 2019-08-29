@@ -3,66 +3,81 @@
   <head>
     <title>My site</title>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/my-style.css" />
   </head>
   <body>
-    <h1>RESUME</h1>
-    <hr />
-    <div class="about-me ">
-      <h2>ABOUT ME</h2>
-      <img src="images/my-picture.jpg" style="width: 400px; height: 300px;" />
-      <ul style="list-style-type:none">
-        <li>NAME: BATISUOC</li>
-        <li>AGE: 12</li>
-        <li>LOCATION: CALIFORNIA</li>
-        <li>DEGREE: PhD</li>
-        <li>PHONE: 0791121123</li>
-      </ul>
-    </div>
-    <div class="info">
-      <h2>BIOGRAPHY</h2>
+    <div class="container-fluid mycv">
+      <h1 class="title">RESUME</h1>
       <hr />
-      <p>
-        Hello everyone, I'm a person who has a passion for technology and
-        software. I'm also a drummer boy.
-      </p>
-      <h2>SKILLS</h2>
-      <hr />
-      <ul>
-        <li>Programming languages: <b>Javascript, PHP, Java</b></li>
-        <li>Databases: <b>MySQL, MS SQL, PostgreSQL</b></li>
-        <li>Others: <b>HTML, CSS</b></li>
-      </ul>
-      <h2>WORK EXPERIENCE</h2>
-      <hr />
-      <ul>
-        <li>
-          <b>2018: Gameloft Internship</b> - Training about C++ and render 3D
-          models.
-        </li>
-      </ul>
-      <h2>EDUCATION</h2>
-      <hr />
-      <ul>
-        <li>
-          <b>2015 - 2020: Ton Duc Thang University :</b> Programming language,
-          Database, Mobile Development, Software Development
-        </li>
-        <li><b>1 - 5/2019:</b> PHP Web programming in NhatNghe.</li>
-      </ul>
-      <h2>EXTRACURRICULAR ACTIVITIES AND AWARDS</h2>
-      <hr />
-      <ul>
-        <li><b>Blood Donation (2016 - 2019)</b></li>
-      </ul>
-      <h2>CONTACT ME</h2>
-      <hr />
-      <form action="#">
-        <h4>YOUR EMAIL:</h4>
-        <input type="text" name="email" /><br />
-        <h4>YOUR MESSAGE:</h4>
-        <input type="text" name="message" /><br />
-        <input type="submit" value="SUBMIT" />
-      </form>
+      <div class="row">
+        <div class="about-me col-sm-4 col-md-4 col-lg-4">
+          <h3>ABOUT ME</h3>
+          <img src="images/my-picture.jpg" style="width: 100%" />
+          <ul style="list-style-type:none">
+            <li>NAME: BATISUOC</li>
+            <li>AGE: 12</li>
+            <li>LOCATION: CALIFORNIA</li>
+            <li>DEGREE: PhD</li>
+            <li>PHONE: 0791121123</li>
+          </ul>
+        </div>
+        <div class="info col-sm-8 col-md-8 col-lg-8">
+          <h3>BIOGRAPHY</h3>
+          <hr />
+          <p>
+            Hello everyone, I'm a person who has a passion for technology and
+            software. I'm also a drummer boy.
+          </p>
+          <h3>SKILLS</h3>
+          <hr />
+          <ul>
+            <li>Programming languages: <b>Javascript, PHP, Java</b></li>
+            <li>Databases: <b>MySQL, MS SQL, PostgreSQL</b></li>
+            <li>Others: <b>HTML, CSS</b></li>
+          </ul>
+          <h3>WORK EXPERIENCE</h3>
+          <hr />
+          <ul>
+            <li>
+              <b>2018: Gameloft Internship</b> - Training about C++ and render
+              3D models.
+            </li>
+          </ul>
+          <h3>EDUCATION</h3>
+          <hr />
+          <ul>
+            <li>
+              <b>2015 - 2020: Ton Duc Thang University :</b> Programming
+              language, Database, Mobile Development, Software Development
+            </li>
+            <li><b>1 - 5/2019:</b> PHP Web programming in NhatNghe.</li>
+          </ul>
+          <h3>EXTRACURRICULAR ACTIVITIES AND AWARDS</h3>
+          <hr />
+          <ul>
+            <li><b>Blood Donation (2016 - 2019)</b></li>
+          </ul>
+          <h3>CONTACT ME</h3>
+          <hr />
+          <form action="#" id="contact">
+            <div class="form-group">
+              <label class="form-label" for="email">YOUR EMAIL:</label>
+              <input class="email-input" id="email" type="text" name="email" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">YOUR MESSAGE:</label
+              ><br />
+              <textarea
+                rows="7"
+                class="message-input"
+                form="contact"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
