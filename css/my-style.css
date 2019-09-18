@@ -7,6 +7,13 @@ div.container-fluid.mycv {
 .form-label {
   padding-right: 10px;
 }
+.about-me {
+  position: fixed;
+  float: left;
+}
+.about-me img {
+  width: 320px;
+}
 .email-input {
   padding-left: 15px;
   border-radius: 4px;
