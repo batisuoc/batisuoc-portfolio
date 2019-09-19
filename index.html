@@ -14,7 +14,22 @@
         <div class="col-sm-4 col-md-4 col-lg-4">
           <div class="about-me">
             <h3>ABOUT ME</h3>
-            <img src="images/my-picture.jpg" />
+            <div class="slideshowContainer">
+              <div class="mySlides fade">
+                <img src="images/pic01.jpg" />
+              </div>
+              <div class="mySlides fade">
+                <img src="images/pic02.jpg" />
+              </div>
+              <div class="mySlides fade">
+                <img src="images/pic03.jpg" />
+              </div>
+              <div class="mySlides fade">
+                <img src="images/pic04.jpg" />
+              </div>
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
             <ul style="list-style-type:none">
               <li>NAME: BATISUOC</li>
               <li>AGE: 12</li>
@@ -109,7 +124,5 @@
       </div>
     </div>
     <script src="js/main.js"></script>
-    <!-- <script src="js/bootstrap.js"></script>
-    <script src="js/bootstrap.min.js"></script> -->
   </body>
 </html>

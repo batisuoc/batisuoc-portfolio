@@ -4,6 +4,8 @@ var noEmailNotice = document.getElementById("no-email-notice");
 var invalidEmail = document.getElementById("invalid-email");
 var noMessNotice = document.getElementById("no-message-notice");
 var invalidMessage = document.getElementById("too-long-message");
+var slideIndex = 1;
+showSlides(slideIndex);
 
 function validateEmail(email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -44,4 +46,23 @@ function checkValid() {
     invalidEmail.style.display = "block";
     event.preventDefault();
   }
+}
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function showSlides(n) {
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (var i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
 }
