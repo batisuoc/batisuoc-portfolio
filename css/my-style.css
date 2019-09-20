@@ -17,13 +17,13 @@ body {
   overflow-x: hidden;
   top: 82px;
   overflow: auto;
-  /* float: left; */
 }
 .bio-info {
   width: 58.33%;
   margin-left: 42.66%;
   padding: 0px 10px;
 }
+/* Form CSS */
 .form-label {
   padding-right: 10px;
 }
@@ -44,7 +44,35 @@ body {
 .notification.email {
   padding-left: 110px;
 }
-
+/* Slideshow css */
+.mySlides {
+  display: none;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 30px;
+  border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 @media (max-width: 768px) {
   .basic-info {
     width: 100%;
