@@ -1,0 +1,26 @@
+.title {
+  text-align: center;
+}
+.form-label {
+  padding-right: 10px;
+}
+.email-input {
+  padding-left: 15px;
+  border-radius: 4px;
+  width: fit-content;
+}
+.message-input {
+  border-radius: 4px;
+  width: 100%;
+}
+.notification {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+.notification.email {
+  padding-left: 110px;
+}
+.mySlides {
+  width: 350px;
+}
