@@ -6,6 +6,8 @@ var noEmailNotice = document.getElementById("no-email-notice");
 var invalidEmail = document.getElementById("invalid-email");
 var noMessNotice = document.getElementById("no-message-notice");
 var invalidMessage = document.getElementById("too-long-message");
+var isTurnOn = true;
+var timeout;
 
 function validateEmail(email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -66,4 +68,32 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
   slides[slideIndex - 1].style.display = "block";
+}
+
+function autoSlideshow() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  timeout = setTimeout(autoSlideshow, 2000); // Change image every 2 seconds
+}
+
+function stopAutoSlideshow() {
+  clearTimeout(timeout);
+}
+
+function changeSlideshowMode() {
+  if (isTurnOn) {
+    autoSlideshow();
+    isTurnOn = false;
+  } else {
+    stopAutoSlideshow();
+    isTurnOn = true;
+  }
 }
