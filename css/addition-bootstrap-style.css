@@ -22,5 +22,21 @@
   padding-left: 110px;
 }
 .mySlides {
-  width: 350px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .basic-info {
+    width: 100%;
+    height: auto;
+    position: relative;
+    float: left;
+  }
+  .bio-info {
+    margin-top: 100px;
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    padding: 0px 10px;
+  }
 }

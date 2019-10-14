@@ -6,8 +6,22 @@ var noEmailNotice = document.getElementById("no-email-notice");
 var invalidEmail = document.getElementById("invalid-email");
 var noMessNotice = document.getElementById("no-message-notice");
 var invalidMessage = document.getElementById("too-long-message");
-var isTurnOn = true;
+var isTurnOff = true;
 var timeout;
+
+$(document).ready(function() {
+  $(".carousel-inner").click(function() {
+    if (isTurnOff) {
+      $(".carousel").carousel({
+        interval: 3000
+      });
+      isTurnOff = false;
+    } else {
+      $(".carousel").carousel("pause");
+      isTurnOff = true;
+    }
+  });
+});
 
 function validateEmail(email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -89,11 +103,11 @@ function stopAutoSlideshow() {
 }
 
 function changeSlideshowMode() {
-  if (isTurnOn) {
+  if (isTurnOff) {
     autoSlideshow();
-    isTurnOn = false;
+    isTurnOff = false;
   } else {
     stopAutoSlideshow();
-    isTurnOn = true;
+    isTurnOff = true;
   }
 }
