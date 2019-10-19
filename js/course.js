@@ -29,7 +29,7 @@ function showNextPage() {
 
 function showDescription(itemID) {
   var descripHTML;
-  $.get(`http://demo6370041.mockable.io/course/${itemID}`, jsonData => {
+  $.get(`https://demo6370041.mockable.io/course/${itemID}`, jsonData => {
     descripHTML = `<tr><td colspan="2"><p>Description: ${
       jsonData["description"]
     }</p><p>Textbook: ${jsonData["textbook"]}</p></td></tr>`;
@@ -40,7 +40,7 @@ function showDescription(itemID) {
 
 $(document).ready(function() {
   // Get list of subjects id and name
-  $.get("http://demo6370041.mockable.io/getcourses", jsonObject => {
+  $.get("https://demo6370041.mockable.io/getcourses", jsonObject => {
     // console.log(jsonObject);
     let listSubjects = jsonObject.data;
     listSubjects.forEach(function(element) {
