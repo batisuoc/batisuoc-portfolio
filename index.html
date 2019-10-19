@@ -7,6 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <title>My profile</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -15,10 +16,14 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"
+    />
+    <!-- Offline CSS Library -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/addition-bootstrap-style.css" />
-
-    <title>My profile</title>
   </head>
   <body>
     <div class="container">
@@ -135,6 +140,20 @@
           <ul>
             <li><b>Blood Donation (2016 - 2019)</b></li>
           </ul>
+          <h3>COURSES</h3>
+          <hr />
+          <div class="list-subjects">
+            <table id="my-table" class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">NAME</th>
+                </tr>
+              </thead>
+              <tbody id="list-items"></tbody>
+            </table>
+            <div id="pagination-control"></div>
+          </div>
           <h3>CONTACT ME</h3>
           <hr />
           <form action="https://github.com/batisuoc" id="contact">
@@ -184,7 +203,6 @@
       </div>
     </div>
 
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -201,6 +219,14 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"
+    ></script> -->
+    <!-- Offline JQuery ,Bootstrap and other Custom Javascript code -->
+    <script src="js/bootstrap.min.js"></script>
+
     <script src="js/main.js"></script>
     <script src="js/course.js"></script>
   </body>
