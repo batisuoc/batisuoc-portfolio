@@ -1,7 +1,9 @@
 var itemsPerPage = 4,
-  currentPage = 1;
-var rows,
+  currentPage = 1,
   pages = 0,
+  isShowingList = [],
+  listDescriptions = [],
+  rows,
   records;
 // Render row by from, to
 function showRecords(from, to) {
@@ -28,17 +30,20 @@ function showNextPage() {
 }
 
 function showDescription(itemID) {
-  var descripHTML;
-  $.get(`https://demo6370041.mockable.io/course/${itemID}`, jsonData => {
-    descripHTML = `<tr><td colspan="2"><p>Description: ${
-      jsonData["description"]
-    }</p><p>Textbook: ${jsonData["textbook"]}</p></td></tr>`;
-  }).done(function() {
-    $(`#${itemID}`).after(descripHTML);
-  });
+  console.log(itemID - 1);
+  // console.log(listDescriptions[itemID - 1]);
+  // console.log(isShowingList[itemID - 1]);
+  // if (!isShowingList[itemID - 1]) {
+  //   $(`${itemID}`).after(listDescriptions[itemID - 1]);
+  //   isShowingList[itemID - 1] = true;
+  // } else {
+  //   $(`${itemID}`).after("");
+  //   isShowingList[itemID - 1] = false;
+  // }
 }
 
 $(document).ready(function() {
+  var descripHTML;
   // Get list of subjects id and name
   $.get("https://demo6370041.mockable.io/getcourses", jsonObject => {
     // console.log(jsonObject);
@@ -49,6 +54,17 @@ $(document).ready(function() {
       tr.setAttribute("onclick", `showDescription(${element["id"]})`);
       tr.innerHTML = `<td>${element["id"]}</td><td>${element["name"]}</td>`;
       $("#list-items").append(tr);
+      $.get(
+        `https://demo6370041.mockable.io/course/${element["id"]}`,
+        jsonData => {
+          descripHTML = `<tr><td colspan="2"><p>Description: ${
+            jsonData["description"]
+          }</p><p>Textbook: ${jsonData["textbook"]}</p></td></tr>`;
+        }
+      ).done(function() {
+        listDescriptions.push(descripHTML);
+        isShowingList.push(false);
+      });
     });
   }).done(function() {
     records = $("#list-items tr").length - 1;
@@ -68,5 +84,6 @@ $(document).ready(function() {
     $("#pagination-control").html(pageHTML);
     // Render page 1 in the first time loading
     showPage(1);
+    console.log(listDescriptions);
   });
 });
