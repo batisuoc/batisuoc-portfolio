@@ -1,5 +1,3 @@
-var slideIndex = 1;
-showSlides(slideIndex);
 var emailValue = document.getElementById("email");
 var messValue = document.getElementById("message");
 var noEmailNotice = document.getElementById("no-email-notice");
@@ -61,53 +59,5 @@ function checkValid() {
   } else if (!validateEmail(emailValue.value)) {
     invalidEmail.style.display = "block";
     event.preventDefault();
-  }
-}
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex - 1].style.display = "block";
-}
-
-function autoSlideshow() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  slides[slideIndex - 1].style.display = "block";
-  timeout = setTimeout(autoSlideshow, 2000); // Change image every 2 seconds
-}
-
-function stopAutoSlideshow() {
-  clearTimeout(timeout);
-}
-
-function changeSlideshowMode() {
-  if (isTurnOff) {
-    autoSlideshow();
-    isTurnOff = false;
-  } else {
-    stopAutoSlideshow();
-    isTurnOff = true;
   }
 }
