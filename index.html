@@ -24,181 +24,48 @@
     <link rel="stylesheet" href="css/addition-bootstrap-style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1 class="title">RESUME</h1>
-      <hr />
-      <div class="row">
-        <div class="basic-info col-xl-4 col-lg-5 col-md-6 col-sm-auto">
-          <!-- sticky-top keep this div position fixed in bootstrap -->
-          <div class="sticky-top">
-            <h3 style="text-align: center">ABOUT ME</h3>
-            <div
-              id="carouselExampleControls"
-              class="carousel slide mySlides"
-              data-ride="carousel"
-              data-interval="false"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img
-                    class="d-block w-100"
-                    src="images/pic01.jpg"
-                    alt="First slide"
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    class="d-block w-100"
-                    src="images/pic02.jpg"
-                    alt="Second slide"
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    class="d-block w-100"
-                    src="images/pic03.jpg"
-                    alt="Third slide"
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    class="d-block w-100"
-                    src="images/pic04.jpg"
-                    alt="Third slide"
-                  />
-                </div>
-              </div>
-              <a
-                class="carousel-control-prev"
-                href="#carouselExampleControls"
-                role="button"
-                data-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="sr-only">Previous</span>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home
+                <span class="sr-only">(current)</span>
               </a>
-              <a
-                class="carousel-control-next"
-                href="#carouselExampleControls"
-                role="button"
-                data-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-            <ul style="list-style-type: none">
-              <li>NAME: BATISUOC</li>
-              <li>AGE: 12</li>
-              <li>LOCATION: CALIFORNIA</li>
-              <li>DEGREE: PhD</li>
-              <li>PHONE: 0791121123</li>
-            </ul>
-          </div>
-        </div>
-        <div class="bio-info col-xl-8 col-lg-7 col-md-6 col-sm-auto">
-          <h3>BIOGRAPHY</h3>
-          <hr />
-          <p>
-            Hello everyone, I'm a person who has a passion for technology and
-            software. I'm also a drummer boy.
-          </p>
-          <h3>SKILLS</h3>
-          <hr />
-          <ul>
-            <li>Programming languages: <b>Javascript, PHP, Java</b></li>
-            <li>Databases: <b>MySQL, MS SQL, PostgreSQL</b></li>
-            <li>Others: <b>HTML, CSS</b></li>
-          </ul>
-          <h3>WORK EXPERIENCE</h3>
-          <hr />
-          <ul>
-            <li>
-              <b>2018: Gameloft Internship</b> - Training about C++ and render
-              3D models.
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
             </li>
           </ul>
-          <h3>EDUCATION</h3>
-          <hr />
-          <ul>
-            <li>
-              <b>2015 - 2020: Ton Duc Thang University :</b> Programming
-              language, Database, Mobile Development, Software Development
-            </li>
-            <li><b>1 - 5/2019:</b> PHP Web programming in NhatNghe.</li>
-          </ul>
-          <h3>EXTRACURRICULAR ACTIVITIES AND AWARDS</h3>
-          <hr />
-          <ul>
-            <li><b>Blood Donation (2016 - 2019)</b></li>
-          </ul>
-          <h3>COURSES</h3>
-          <hr />
-          <div class="list-subjects">
-            <table id="my-table" class="table table-striped table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">NAME</th>
-                </tr>
-              </thead>
-              <tbody id="list-items"></tbody>
-            </table>
-            <div id="pagination-control"></div>
-          </div>
-          <h3>CONTACT ME</h3>
-          <hr />
-          <form action="https://github.com/batisuoc" id="contact">
-            <div class="form-group">
-              <label class="form-label" for="email">YOUR EMAIL:</label>
-              <input
-                class="email-input"
-                id="email"
-                type="text"
-                name="email"
-                onclick="hideEmailNotice()"
-              />
-              <div class="notification email" id="no-email-notice">
-                Vui lòng nhập email
-              </div>
-              <div class="notification email" id="invalid-email">
-                Email không hợp lệ
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="message">YOUR MESSAGE:</label>
-              <br />
-              <textarea
-                rows="7"
-                class="message-input"
-                form="contact"
-                id="message"
-                onclick="hideMessNotice()"
-                oninput="checkValidMessage()"
-              ></textarea>
-              <div class="notification" id="no-message-notice">
-                Vui lòng nhập message
-              </div>
-              <div class="notification" id="too-long-message">
-                Message dài quá 128 kí tự
-              </div>
-            </div>
-            <button
-              type="submit"
-              class="btn btn-primary"
-              onclick="checkValid()"
-            >
-              Submit
-            </button>
-          </form>
         </div>
       </div>
+    </nav>
+    <div>
+      <img
+        src="./images/pic01.jpg"
+        alt="my pic"
+        style="width: 100%; height: 100%"
+      />
     </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -218,12 +85,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script
-      type="text/javascript"
-      src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"
-    ></script> -->
     <!-- Custom Javascript code -->
     <script src="js/main.js"></script>
-    <script src="js/course.js"></script>
   </body>
 </html>
