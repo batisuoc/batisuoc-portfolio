@@ -7,3 +7,16 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
+.carousel-inner > .carousel-item {
+  -webkit-backface-visibility: unset !important;
+  backface-visibility: unset !important;
+}
+
+.carousel-inner > .carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 900px;
+}
